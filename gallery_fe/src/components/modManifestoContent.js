@@ -7,7 +7,12 @@ class ModManifestoContent extends React.Component{
     }
 
     render() {
-        return(<p>Art != Artist</p>);
+        return (<div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%'}}>
+                 
+                 <img src="./static/mod_script.png" style={{height: '33%', width: '33%', alignSelf: 'center', marginTop: '10%'}} />
+                 <p style={{alignSelf: 'center'}} >Idea Rhizome: v0.1</p>
+                </div>
+        );
     }
 
 }
