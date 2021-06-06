@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {Graph} from 'react-d3-graph';
 import {ModManifestoContent} from './components/modManifestoContent.js';
 import {SVGPoiFlower} from './components/floretumContent.js';
+import {ConwARContent} from './components/conwARContent.js';
 import {MetropolisAlgContent} from './components/metropolisAlgContent.js';
 import {EmmersonMirrorContent} from './components/emmersonMirrorContent.js';
 
@@ -33,7 +34,8 @@ class Content extends React.Component {
           return(<MetropolisAlgContent />)
         case "R.W.E. Mirror":
           return(<EmmersonMirrorContent />)
-
+        case "conwAR":
+          return(<ConwARContent />)
 
         default:
           return(<p>nothingness...</p>);
@@ -84,16 +86,20 @@ class Gallery extends React.Component {
                             { id: "Floretum", color: "grey" },
                             { id: "Pseudomath", symbolType: "square", color: "grey"},
                             { id: "Metropolis Alg.", color: "grey" },
-                            { id: "R.W.E. Mirror", color: "grey" }
+                            { id: "R.W.E. Mirror", color: "grey" },
+                            { id: "Data Viz.", symbolType: "square", color: "grey"},
+                            { id: "conwAR", color: "grey" }
                            ],
                     links: [
                       { source: "Mod.", target: "Writing" },
                       { source: "Mod.", target: "Movement" },
                       { source: "Mod.", target: "Pseudomath" },
+                      { source: "Mod.", target: "Data Viz." },
                       { source: "Movement", target: "Floretum" },
                       { source: "Writing", target: "R.W.E. Mirror" },
                       { source: "Writing", target: "Metropolis Alg." },
                       { source: "Pseudomath", target: "Metropolis Alg." },
+                      { source: "Data Viz.", target: "conwAR" },
                     ],
                   };
     
