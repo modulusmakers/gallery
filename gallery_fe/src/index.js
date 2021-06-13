@@ -53,11 +53,14 @@ class Ontology extends React.Component {
     render() {
         const graphConfig = {node: { size: 720,
                                      fontSize: 16,
+                                     highlightStrokeColor: "orange",
+                                     highlightFontSize: 18
                              },
-                             link: {},
+                             link: {highlightColor: "orange"},
                              d3: {gravity: -500},
                              height: this.props.height,
-                             width: this.props.width
+                             width: this.props.width,
+                             nodeHighlightBehavior: true,
         };
 
 
@@ -86,7 +89,7 @@ class Gallery extends React.Component {
                             { id: "Floretum", color: "grey" },
                             { id: "Pseudomath", symbolType: "square", color: "grey"},
                             { id: "Metropolis Alg.", color: "grey" },
-                            { id: "R.W.E. Mirror", color: "grey" },
+                            //{ id: "R.W.E. Mirror", color: "grey" },
                             { id: "Data Viz.", symbolType: "square", color: "grey"},
                             { id: "conwAR", color: "grey" }
                            ],
@@ -96,7 +99,7 @@ class Gallery extends React.Component {
                       { source: "Mod.", target: "Pseudomath" },
                       { source: "Mod.", target: "Data Viz." },
                       { source: "Movement", target: "Floretum" },
-                      { source: "Writing", target: "R.W.E. Mirror" },
+                      //{ source: "Writing", target: "R.W.E. Mirror" },
                       { source: "Writing", target: "Metropolis Alg." },
                       { source: "Pseudomath", target: "Metropolis Alg." },
                       { source: "Data Viz.", target: "conwAR" },
@@ -128,9 +131,13 @@ class Gallery extends React.Component {
     //TODO if this is a topic node, toggle its children
   }
 
+  componentDidMount() {
+    this.handleOntologyClick('Mod.');
+  }
+
   render() {
     return(
-        <div>
+        <div style={{overflow: 'hidden'}}>
           <div className="columnL">
               <Content activeNodeId={this.state.activeNodeId} />
           </div>

@@ -15,9 +15,17 @@ code {
 .columnL {
     float: left;
     width: 50%;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 .columnR {
     float: right;
     width: 50%;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
